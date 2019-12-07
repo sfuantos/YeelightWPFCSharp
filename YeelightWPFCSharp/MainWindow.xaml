@@ -3,10 +3,27 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:YeelightWPFCSharp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Yeelight WPF App" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Device IP:" HorizontalAlignment="Left" Margin="43,27,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="deviceTxt" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="130,27,0,0"/>
+        <Label Content="Status:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="369,22,0,0" FontSize="24"/>
+        <Label x:Name="statusLabel" Content="" VerticalAlignment="Top" Margin="453,22,148,0" FontSize="24"/>
+        <Button x:Name="onBtn" Content="On" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Margin="393,84,0,0" Height="45" Click="OnBtn_Click"/>
+        <Button x:Name="offBtn" Content="Off" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Margin="443,84,0,0" Height="45" Click="OffBtn_Click" RenderTransformOrigin="6.044,1.147"/>
+        <Button x:Name="connectBtn" Content="Connect" HorizontalAlignment="Left" Margin="267,30,0,0" VerticalAlignment="Top" Width="75" Click="ConnectBtn_Click"/>
+        <ListView x:Name="devicesListView" HorizontalAlignment="Left" Height="181" Margin="98,84,0,0" VerticalAlignment="Top" Width="152" PreviewMouseDoubleClick="devicesListView_PreviewMouseDoubleClick" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="refreshBtn" Content="Refresh" HorizontalAlignment="Left" Margin="267,96,0,0" VerticalAlignment="Top" Width="75" Click="RefreshBtn_Click"/>
+
     </Grid>
 </Window>
